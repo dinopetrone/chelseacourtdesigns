@@ -1,30 +1,94 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html class="no-js ie6 medium" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7 medium" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8 medium" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js medium" lang="en">
+<!--[if IE 7 ]>
+<html class="no-js ie ie7"><![endif]--><!--[if IE 8 ]>
+<html class="no-js ie ie8"><![endif]--><!--[if IE 9 ]>
+<html class="no-js ie ie9"><![endif]--><!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js">
+	<!--<![endif]-->
 	<head>
 		<meta charset="utf-8" />
-		<meta property="og:title" content=" Title Here " />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://www.mysite.com/" />
-		<meta property="og:image" content="http://www.mysite.com/fb.jpg" />
-		<meta property="og:description" content="FB description here" />
-		<meta property="og:site_name" content="FB Site name" />
-		<title>Site Title</title>
-		<link rel="stylesheet" href="{{RESOURCES_URL}}resources/css/styles.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+		<title>Chelsea Court Designs</title>
+
+		<link rel="stylesheet" href="/assets/styles/global.css" />
 		{% for file in css %}
 		<link rel="stylesheet" href="{{RESOURCES_URL}}{{file}}" />
 		{% endfor %}
+		<script src="/assets/scripts/libs/modernizr-2.0.6.min.js"></script>
+		<script src="/assets/scripts/libs/jquery-1.6.2.min.js"></script>
+		<script src="/assets/scripts/libs/pagify.js"></script>
+
 	</head>
-	<body>
-		{% block base %}
-		{% endblock %}
+
+	<body class="home">
+
+		<div id="wrapper">
+
+			<header id="global-header">
+				<h1 id="logo"><a href="/"><img src="../assets/images/logo.gif" width="147" height="91" alt="Chelsae Court Designs" /></a></h1>
+				<nav id="primary-nav">
+					<ul>
+						<li id="nav-home">
+							<a href="index.php">Home</a>
+						</li>
+						<li id="nav-about">
+							<a href="about.php">About</a>
+						</li>
+						<li id="nav-services">
+							<a href="services.php">Services</a>
+						</li>
+						<li id="nav-portfolio">
+							<a href="portfolio.php">Portfolio</a>
+						</li>
+						<li id="nav-contact">
+							<a href="contact.php">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<div id="main">
+				{% block base %}
+				{% endblock %}
+			</div>
+
+			<footer id="global-footer">
+				<p>
+					<a href="http://maps.google.com/maps?q=100+Los+Gatos,+Saratoga+Rd,+Suite+D,+Los+Gatos,+CA+95032&hl=en&sll=34.137308,-118.009302&sspn=0.012539,0.022638&vpsrc=0&hnear=100+Los+Gatos-Saratoga+Rd,+Los+Gatos,+Santa+Clara,+California+95032&t=m&z=16&iwloc=r0" target="_blank">100 Los Gatos - Saratoga Rd, Suite D, Los Gatos, CA 95032</a> | <a href="mailto:info@chelseacourtdesigns.com">info@chelseacourtdesigns.com</a> |  408 399 7720
+				</p>
+				<a id="facebook-logo" href="http://www.facebook.com/pages/Chelsea-Court-Designs/256013524457614" target="_blank"><img src="/assets/images/facebook.gif"></a>
+			</footer>
+
+		</div>
+
+		<script src="/assets/scripts/libs/jquery.simplemodal-1.4.1.min.js"></script>
+
+		<script src="/assets/scripts/global.js"></script>
 		{% for file in javascripts %}
 		<script src="{{RESOURCES_URL}}{{file}}"></script>
 		{% endfor %}
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-27527978-1']);
+			_gaq.push(['_setDomainName', 'chelseacourtdesigns.com']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+		<script>
+			$(function() {
+				CCD.pages.home();
+			});
+		</script>
+
 	</body>
+
 </html>

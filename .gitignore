@@ -3,7 +3,6 @@
 *.pyc
 local_settings.py
 
-*.css
 .project
 .pydevproject
 .sass-cache/
