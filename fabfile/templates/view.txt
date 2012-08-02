@@ -1,0 +1,9 @@
+from .base import BaseView
+#from www.services.index import IndexService
+
+
+class {view_name}View(BaseView):
+    def get(self, request):
+        #service = IndexService()
+        #model = service.index_view_model()
+        return self.view('{html}.html', {})
