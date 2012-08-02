@@ -1,14 +1,15 @@
+from fabric.api import local, task
+import css
 
 @task
 def run():
-    local('python manage.py runserver 8080')
+    local('python manage.py runserver 8000')
 
 
 @task
 def reset():
-	local('rm -f sqlite.db')
-	local('yes no | python manage.py syncdb')
-	local('python manage.py loaddata currencies')
-	local('python manage.py createsuperuser --username=user --email=user@host.com')
+    local('rm -f sqlite.db')
+    local('python manage.py syncdb --noinput')
+    local('python manage.py createsuperuser --username=user --email=user@host.com')
 
 

@@ -22,6 +22,8 @@ DATABASES = {
     }
 }
 
+GRAPPELLI_ADMIN_TITLE = 'eSports'
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -105,7 +107,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'www.processors.global.static_template_vars',
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.static',
 )
@@ -123,11 +124,10 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    #'django.contrib.sites',
-    #'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
 )
