@@ -109,6 +109,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.static',
+    'www.processors.global.static_template_vars',
 )
 
 ROOT_URLCONF = 'www.urls'
