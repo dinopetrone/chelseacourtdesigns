@@ -1,6 +1,10 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from www.views.about import AboutView
+from www.views.contact import ContactView
 from www.views.index import IndexView
+from www.views.portfolio import PortfolioView
+from www.views.services import ServicesView
 
 admin.autodiscover()
 
@@ -12,5 +16,9 @@ urlpatterns = patterns('',
     (r'^resources/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'public/resources'}),
     url(r'^admin/', include(admin.site.urls)),
     
+    url(r'^contact/?$', ContactView.as_view(), name='contact'),
+    url(r'^portfolio/?$', PortfolioView.as_view(), name='portfolio'),
+    url(r'^about/?$', AboutView.as_view(), name='about'),
+    url(r'^services/?$', ServicesView.as_view(), name='services'),
     url(r'^$', IndexView.as_view(), name='index'),
 )

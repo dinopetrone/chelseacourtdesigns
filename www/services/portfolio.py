@@ -1,12 +1,12 @@
 from .base import BaseService
 from www.models.base import BaseViewModel
 
-class IndexService(BaseService):
+class PortfolioService(BaseService):
     
     def __init__(self):
         pass
 
-    def index_view_model(self):
+    def portfolio_view_model(self):
         obj = BaseViewModel()
-        obj.body_class = 'home'
+        #obj.portfolio_items = 
         return obj

@@ -1,12 +1,13 @@
 from .base import BaseService
 from www.models.base import BaseViewModel
 
-class IndexService(BaseService):
+class ServicesService(BaseService):
     
     def __init__(self):
         pass
 
-    def index_view_model(self):
+    def services_view_model(self):
         obj = BaseViewModel()
-        obj.body_class = 'home'
+        #obj.services = 
+        obj.body_class = 'services'
         return obj

@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html' %}
+{% block base %}
+<div class="content">
+
+	<img class="shadow-img" src="{{RESOURCES_URL}}resources/img/contact.jpg" width="337" height="254" alt="">
+
+	<h2 id="contact">Contact</h2>
+	<p>
+		<a href="http://maps.google.com/maps?q=100+Los+Gatos,+Saratoga+Rd,+Suite+D,+Los+Gatos,+CA+95032&hl=en&sll=34.137308,-118.009302&sspn=0.012539,0.022638&vpsrc=0&hnear=100+Los+Gatos-Saratoga+Rd,+Los+Gatos,+Santa+Clara,+California+95032&t=m&z=16&iwloc=r0" target="_blank">100 Los Gatos - Saratoga Rd, Suite D
+		<br>
+		Los Gatos, CA 95032</a>
+		<br>
+		T 408 399 7720
+		<br>
+		F 408 399 7723
+		<br>
+	</p>
+
+	<p id="consultation">
+		<a href="#contact-form" class="contact-action">Click here for a complimentary consultation</a>
+	</p>
+
+	<h2>Hours of Operation</h2>
+	<p>
+		Monday-Friday
+		<br>
+		8:30-5:30
+		<br>
+		Evenings and weekends by
+		<br>
+		appointment only
+	</p>
+</div>
+
+<div id="contact-form" style="display:none">
+	<div id="wufoo-z7x3x5"></div>
+	<script type="text/javascript">
+		var z7x3x5;
+		(function(d, t) {
+			var s = d.createElement(t), options = {
+				'userName' : 'chelseacourtdesigns',
+				'formHash' : 'z7x3x5',
+				'autoResize' : true,
+				'height' : '660',
+				'async' : true,
+				'header' : 'show'
+			};
+			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+			s.onload = s.onreadystatechange = function() {
+				var rs = this.readyState;
+				if (rs)
+					if (rs != 'complete')
+						if (rs != 'loaded')
+							return;
+				try {
+					z7x3x5 = new WufooForm();
+					z7x3x5.initialize(options);
+					z7x3x5.display();
+				} catch (e) {
+				}
+			};
+			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode;
+			par.insertBefore(s, scr);
+		})(document, 'script');
+	</script>
+</div>
+{% endblock %}

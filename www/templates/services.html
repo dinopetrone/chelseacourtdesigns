@@ -1,0 +1,87 @@
+{% extends 'layouts/base.html' %}
+{% block base %}
+
+<h2 class="screen-reader-only">Services</h2>
+
+<div class="content">
+
+	<img id="services-image" src="assets/images/services.jpg" width="236" height="351" alt=""/>
+
+	<div id="service-item"></div>
+
+	<p>
+		We provide services for residential, hospitality and commercial projects and are able to work within a variety of budgets. Precise planning and close consultation with our clients is a key element of the design process, allowing us to deliver results of the highest quality.
+	</p>
+
+	<h3>Services include:</h3>
+
+	<ul id="service-list" class="bulleted-list">
+		{% for service in services %}
+		<li>
+			<h4><a class="title" href="#interior">Interior architecture design and decoration</a></h4>
+			<div id="interior" class="description">
+				<p>
+					Interior architectural design is the interior detailing within the architecture of the home or commercial space. We design and specify every aspect of a project from its moldings, wall finishes, to complex reflected ceiling details for construction purposes. During the construction process and thereafter, we select all decorative lighting, furniture and accessories to meet both our clients' budgets and timelines.
+				</p>
+				<span class="cta"><strong>Have a project in mind?</strong> <a href="#contact-form" class="contact-action">Click here</a> for a complimentary initial consultation</span>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+<script>
+	$(function() {
+		var serviceItem = $('#service-item'), serviceList = $('#service-list'), image = $('#services-image'), showing = false, close = $('#close');
+
+		serviceList.delegate('.title', 'click', function(e) {
+			e.preventDefault();
+
+			var el = $(this);
+
+			if (el.hasClass('current'))
+				return false;
+
+			var title = el.html(), description = $(el.attr('href')).clone(), cta = description.find('.cta'), html = '<a href="" id="close">close</a><div class="body"><span class="title">' + title + '</span></div>';
+
+			html = $(html).append(description);
+
+			serviceItem.html(html).append(cta);
+
+			if (!showing) {
+				if (Modernizr.csstransforms3d) {
+					image.addClass('hide');
+					setTimeout(function() {
+						serviceItem.addClass('show')
+					}, 400);
+				} else {
+					image.fadeOut(500, function() {
+						serviceItem.fadeIn(500);
+					});
+
+				}
+			}
+
+			serviceList.find('.current').removeClass('current');
+			el.addClass('current')
+
+		});
+
+		serviceItem.delegate('#close', 'click', function(e) {
+			e.preventDefault();
+			serviceList.find('.current').removeClass('current');
+			if (Modernizr.csstransforms3d) {
+				serviceItem.removeClass('show');
+				setTimeout(function() {
+					image.removeClass('hide')
+				}, 400);
+			} else {
+				serviceItem.fadeOut(500, function() {
+					image.fadeIn(500);
+				});
+
+			}
+
+		})
+	}); 
+</script>
+{% endblock %}
