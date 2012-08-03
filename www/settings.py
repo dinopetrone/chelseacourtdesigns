@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'www.home_carousel',
     'www.people',
     'www.service',
+    'www.portfolio',
     
 )
 

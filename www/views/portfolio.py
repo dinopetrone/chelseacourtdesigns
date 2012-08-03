@@ -6,4 +6,4 @@ class PortfolioView(BaseView):
     def get(self, request):
         service = PortfolioService()
         model = service.portfolio_view_model()
-        return self.view('portfolio.html', {})
+        return self.view('portfolio.html', model)

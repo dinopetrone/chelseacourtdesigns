@@ -5,10 +5,10 @@
 
 <ul id="portfolio">
 	{% for item in portfolio_items %}
-	{% endfor %}
 	<li class="row-start">
-		<a href="assets/images/portfolio/1.jpg"><img src="assets/images/portfolio/thumb-1.jpg" width="115" height="115" alt="" /></a>
+		<a href="{{MEDIA_URL}}{{item.large_img}}"><img src="{{MEDIA_URL}}{{item.small_img}}" width="115" height="115" alt="" /></a>
 	</li>
+	{% endfor %}
 
 </ul>
 <script>
@@ -16,5 +16,37 @@
 		CCD.pages.portfolio();
 	}); 
 </script>
+<div id="contact-form" style="display:none">
+	<div id="wufoo-z7x3x5"></div>
+	<script type="text/javascript">
+		var z7x3x5;
+		(function(d, t) {
+			var s = d.createElement(t), options = {
+				'userName' : 'chelseacourtdesigns',
+				'formHash' : 'z7x3x5',
+				'autoResize' : true,
+				'height' : '660',
+				'async' : true,
+				'header' : 'show'
+			};
+			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+			s.onload = s.onreadystatechange = function() {
+				var rs = this.readyState;
+				if (rs)
+					if (rs != 'complete')
+						if (rs != 'loaded')
+							return;
+				try {
+					z7x3x5 = new WufooForm();
+					z7x3x5.initialize(options);
+					z7x3x5.display();
+				} catch (e) {
+				}
+			};
+			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode;
+			par.insertBefore(s, scr);
+		})(document, 'script');
+	</script>
+</div>
 
 {% endblock %}
