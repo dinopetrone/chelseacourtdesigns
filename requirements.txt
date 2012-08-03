@@ -6,6 +6,7 @@ dj-database-url==0.2.1
 -e git+https://github.com/sehmaschine/django-grappelli.git@d69c02e5ab6227040aef8d50f31b8c9c3513807c#egg=django_grappelli-dev
 django-storages==1.1.4
 newrelic==1.3.0.289
+psycopg2==2.4.5
 pycrypto==2.6
 pysolr==2.1.0-beta
 python-memcached==1.48
