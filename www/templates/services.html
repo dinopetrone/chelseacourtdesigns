@@ -1,4 +1,5 @@
 {% extends 'layouts/base.html' %}
+{% load www_extras %}
 {% block base %}
 
 <h2 class="screen-reader-only">Services</h2>
@@ -18,16 +19,48 @@
 	<ul id="service-list" class="bulleted-list">
 		{% for service in services %}
 		<li>
-			<h4><a class="title" href="#interior">{{service.title}}</a></h4>
-			<div id="interior" class="description">
+			<h4><a class="title" href="#{{service.get_id}}">{{service.title}}</a></h4>
+			<div id="{{service.get_id}}" class="description">
 				<p>
 					{{service.blurb}}
 				</p>
-				<span class="cta"><strong>Have a project in mind?</strong> <a href="#contact-form" class="contact-action">Click here</a> for a complimentary initial consultation</span>
+				<span class="cta"> <strong>{{service.bottom_title}}</strong> {{service.bottom_description|link}} </span>
 			</div>
 		</li>
 		{% endfor %}
 	</ul>
+</div>
+<div id="contact-form" style="display:none">
+	<div id="wufoo-z7x3x5"></div>
+	<script type="text/javascript">
+		var z7x3x5;
+		(function(d, t) {
+			var s = d.createElement(t), options = {
+				'userName' : 'chelseacourtdesigns',
+				'formHash' : 'z7x3x5',
+				'autoResize' : true,
+				'height' : '660',
+				'async' : true,
+				'header' : 'show'
+			};
+			s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+			s.onload = s.onreadystatechange = function() {
+				var rs = this.readyState;
+				if (rs)
+					if (rs != 'complete')
+						if (rs != 'loaded')
+							return;
+				try {
+					z7x3x5 = new WufooForm();
+					z7x3x5.initialize(options);
+					z7x3x5.display();
+				} catch (e) {
+				}
+			};
+			var scr = d.getElementsByTagName(t)[0], par = scr.parentNode;
+			par.insertBefore(s, scr);
+		})(document, 'script');
+	</script>
 </div>
 <script>
 	$(function() {
