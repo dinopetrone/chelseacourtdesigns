@@ -32,57 +32,24 @@
 </div>
 
 <div id="who-container" class="tab-content hidden">
-	<div id="marie">
-		<img src="{{RESOURCES_URL}}resources/img/marie.jpg" width="211" height="315" alt=""/>
+	{% for person in people %}
+	
+	<div id="{{person.id_class}}" class="{% if forloop.counter != 1 %}hidden{% endif %} person">
+		<img src="{{MEDIA_URL}}{{person.large_img}}" width="211" height="315" alt="">
 		<div class="content">
-			<h3>Marie Christine Peterson</h3>
+			<h3>{{person.name}}</h3>
 			<p>
-				For more than 35 years, Marie has developed an enviable reputation for creating sophisticated, yet comfortable environments. Marie's career began with a family tradition of travel, study and observation of the decorative arts and architecture. Throughout her life she has traveled throughout Europe, Asia, South and Central America. All of these experiences finely honed Marie's understanding and appreciation of different regional and period aesthetics. This was the beginning of her education in creating refined interiors spanning the contemporary to traditional aesthetics of design.
-				<br>
-				<br>
-				Employing a supporting team of talented professionals, Marie delivers an unsurpassed level of service and personal attention to her diverse projects. Her frequently published work encompasses elegant country estates, exotic island getaways, and luxurious contemporary apartments.
-				<br>
-				<br>
-				Alongside Marie's broad lifestyle experience within art, fine antiques, and design aesthetics, Marie also pursued a formal education in the technical aspects of her trade, obtaining a B.S. Degree from San Jose State University in Interior Design in 1979. "To me, being a professional requires more than simply having the right sense of style. It also means mastering the 'nuts and bolts' of design, including the latest in technology, materials and architecture. It's this combination of experience that enables a designer to deliver not just beautiful results but also value to the client."
+				{{person.blurb}}
 			</p>
 		</div>
 	</div>
-	<div id="sascha" class="hidden">
-		<img src="{{RESOURCES_URL}}resources/img/sascha.jpg" width="211" height="315" alt="">
-		<div class="content">
-			<h3>Sascha Lale</h3>
-			<p>
-				Sascha received a Bachelor's Degree in Interior Architecture &amp; Design from Nottingham Trent University, Great Britain. She joined Chelsea Court Designs in 2004 as Senior Designer and Project Manager having worked as a commercial interior designer for the prior eight years in Europe.
-				<br>
-				<br>
-				Sascha's approach encompasses the classical to contemporary. Whilst layering practicality, balance and harmony throughout each project, she is consistently mindful of budget and timelines in the creation of custom designs of lighting, furniture, and architectural detailing.
-				<br>
-				<br>
-				Drawing upon her extensive travels throughout Europe, Asia, South America and Australasia allows Sascha to create engaging interiors personalized to each Client's taste.
-			</p>
-		</div>
-	</div>
-
-	<div id="hillary" class="hidden">
-		<img src="{{RESOURCES_URL}}resources/img/hillary.jpg" width="211" height="315" alt="">
-		<div class="content">
-			<h3>Hillary Welty</h3>
-			<p>
-				Hillary Welty, Assistant Designer, is the youngest of the team at Chelsea Court Designs yet not without the skills and knowledge needed to help facilitate and manage our high profile projects. With several years already under her belt, as well as numerous projects of her own, she helps the team run smoothly and efficiently, striving for maximum client satisfaction. Coming from an art background having previously worked in fine arts, graphic design and portraiture, she has a great love for detail, beauty, and finding the essence of a person translated either through the canvas or in an interior space. She has traveled extensively from Europe to India to Asia, and has brought treasured knowledge back with her. In addition to her work at Chelsea Court Designs, she enjoys volunteering in the community around her and has been part of several organizations and trips specializing in providing much needed medical care and housing to struggling communities. Hillary graduated from San Jose State University with a degree in Graphic Design and continues to be a vital part of our team.
-			</p>
-		</div>
-	</div>
-
+	{% endfor %}
 	<ul id="who-tabs">
+		{% for person in people %}
 		<li>
-			<a href="#marie" id="marie-btn" class="active">Marie Christine Peterson</a>
+			<a href="#{{person.id_class}}" id="{{person.id_class}}-btn" class="{% if forloop.counter == 1 %}active{% endif %}">{{person.name}}</a>
 		</li>
-		<li>
-			<a href="#sascha" id="sascha-btn">Sascha Lale</a>
-		</li>
-		<li>
-			<a href="#hillary" id="hillary-btn">Hillary Welty</a>
-		</li>
+		{% endfor %}
 	</ul>
 
 </div>

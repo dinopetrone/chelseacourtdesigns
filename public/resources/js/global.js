@@ -179,20 +179,21 @@ var CCD = {
 			var aboutTabs = $("#about-tabs"),
 				whoContainer = $('#who-container'),
 				whatContainer = $('#what-container'),
+				howContainer = $('#how-container'),
 				whoTabs = $('#who-tabs'),
-				sascha = $('#sascha'),
-				marie = $('#marie'),
-				hillary = $('#hillary'),
-				activeWho = marie;
+				activeWho = $('#who-container .person:not(.hidden)')
+				activeAbout = whatContainer;
 
 			$('#what-btn').bind('click',function(){
 
 				aboutTabs.find('.active').removeClass('active');
 				$(this).addClass('active');
 
-				whoContainer.fadeOut(function(){
+				activeAbout.fadeOut(function(){
 					whatContainer.fadeIn();
 				});
+				
+				activeAbout = whatContainer;
 
 				return false;
 			});
@@ -201,9 +202,24 @@ var CCD = {
 				aboutTabs.find('.active').removeClass('active');
 				$(this).addClass('active');
 
-				whatContainer.fadeOut(function(){
+				activeAbout.fadeOut(function(){
 					whoContainer.fadeIn();
 				});
+				
+				activeAbout = whoContainer;
+
+				return false;
+			});
+			
+			$('#how-btn').bind('click',function(){
+				aboutTabs.find('.active').removeClass('active');
+				$(this).addClass('active');
+
+				activeAbout.fadeOut(function(){
+					howContainer.fadeIn();
+				});
+				
+				activeAbout = howContainer;
 
 				return false;
 			});

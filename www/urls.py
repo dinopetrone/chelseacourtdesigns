@@ -16,10 +16,7 @@ urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^resources/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'public/resources'}),
     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-    
     url(r'^admin/', include(admin.site.urls)),
-    
-    
     url(r'^contact/?$', ContactView.as_view(), name='contact'),
     url(r'^portfolio/?$', PortfolioView.as_view(), name='portfolio'),
     url(r'^about/?$', AboutView.as_view(), name='about'),
