@@ -5,7 +5,7 @@
 
 <div class="content">
 
-	<img id="services-image" src="assets/images/services.jpg" width="236" height="351" alt=""/>
+	<img id="services-image" src="{{RESOURCES_URL}}resources/img/services.jpg" width="236" height="351" alt=""/>
 
 	<div id="service-item"></div>
 
@@ -18,10 +18,10 @@
 	<ul id="service-list" class="bulleted-list">
 		{% for service in services %}
 		<li>
-			<h4><a class="title" href="#interior">Interior architecture design and decoration</a></h4>
+			<h4><a class="title" href="#interior">{{service.title}}</a></h4>
 			<div id="interior" class="description">
 				<p>
-					Interior architectural design is the interior detailing within the architecture of the home or commercial space. We design and specify every aspect of a project from its moldings, wall finishes, to complex reflected ceiling details for construction purposes. During the construction process and thereafter, we select all decorative lighting, furniture and accessories to meet both our clients' budgets and timelines.
+					{{service.blurb}}
 				</p>
 				<span class="cta"><strong>Have a project in mind?</strong> <a href="#contact-form" class="contact-action">Click here</a> for a complimentary initial consultation</span>
 			</div>

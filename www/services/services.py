@@ -1,4 +1,5 @@
 from .base import BaseService
+from www.service.models import Service
 from www.models.base import BaseViewModel
 
 class ServicesService(BaseService):
@@ -8,6 +9,6 @@ class ServicesService(BaseService):
 
     def services_view_model(self):
         obj = BaseViewModel()
-        #obj.services = 
+        obj.services = Service.objects.all()
         obj.body_class = 'services'
         return obj

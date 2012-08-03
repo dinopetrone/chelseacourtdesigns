@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'www.home_carousel',
     'www.people',
+    'www.service',
     
 )
 

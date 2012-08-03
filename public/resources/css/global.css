@@ -1,3 +1,4 @@
+
 /************************************************   
 RESET
 *************************************************/
@@ -346,7 +347,7 @@ SERVICES
 	padding-top:14px;
 	overflow:hidden;
 	height:0;
-	background:url(/assets/images/close.png) no-repeat 0 0;
+	background:url(../img/close.png) no-repeat 0 0;
 }
 .services #service-item #close:hover,
 .services #service-item #close:focus {
@@ -458,7 +459,7 @@ PORTFOLIO
 	height:0;
 	padding-top:12px;
 	width:12px;
-	background:url(/assets/images/modal-close.png) no-repeat;
+	background:url(../img/modal-close.png) no-repeat;
 	overflow:hidden;
 }
 .persist-hidden .modalCloseImg {
